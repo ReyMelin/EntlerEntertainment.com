@@ -1,7 +1,28 @@
 // Fade in hero section on load
 window.addEventListener("load", () => {
-  const headerH1 = document.querySelector("header h1");
-  headerH1.classList.add("visible");
+  // Navbar brand
+  const headerBrand = document.querySelector(".navbar-brand");
+  if (headerBrand) headerBrand.classList.add("visible");
+
+  // Hero section headings
+  const heroHeadings = document.querySelectorAll("section.vh-100 h2, section.vh-100 p");
+  heroHeadings.forEach(el => el.classList.add("visible"));
+
+  // About section heading
+  const aboutHeading = document.querySelector("#about h2");
+  if (aboutHeading) aboutHeading.classList.add("visible");
+
+  // Games section heading
+  const gamesHeading = document.querySelector("#games h2");
+  if (gamesHeading) gamesHeading.classList.add("visible");
+
+  // Books section heading
+  const booksHeading = document.querySelector("#books h2");
+  if (booksHeading) booksHeading.classList.add("visible");
+
+  // Contact section heading
+  const contactHeading = document.querySelector("#contact h2");
+  if (contactHeading) contactHeading.classList.add("visible");
 
   // Start lava lamp on the body
   startLavaLamp(document.body);
@@ -15,6 +36,7 @@ function startLavaLamp(container) {
   ];
 
   const canvas = document.createElement("canvas");
+  canvas.className = "lava-lamp-bg";
   container.appendChild(canvas);
   canvas.style.position = "fixed"; /* covers viewport */
   canvas.style.top = 0;
@@ -65,12 +87,32 @@ function startLavaLamp(container) {
   animate();
 }
 
-// Toggle .scrolled class on header on scroll
+// Toggle .scrolled class on navbar on scroll
 window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  if (window.scrollY > 30) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    if (window.scrollY > 30) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+});
+
+// Bootstrap form validation for contact form
+window.addEventListener("DOMContentLoaded", function() {
+  const contactForm = document.querySelector("#contact form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+      const emailInput = contactForm.querySelector("#contactEmail");
+      if (!contactForm.checkValidity() || (emailInput && !emailInput.validity.valid)) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (emailInput && !emailInput.validity.valid) {
+          emailInput.focus();
+        }
+      }
+      contactForm.classList.add("was-validated");
+    }, false);
   }
 });

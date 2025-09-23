@@ -11,6 +11,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entler Entertainment</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,119 +20,141 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Entler Entertainment</h1>
-    <nav>
-      <button id="hamburger-menu" aria-label="Open navigation" style="display:none;">
-        &#9776;
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand roboto-condensed d-flex align-items-center" href="#">
+        <img src="EE Logo.png" alt="EE Logo" width="48" height="48" class="me-2" style="object-fit:contain;">
+        Entler Entertainment
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="nav-links">
-        <a href="#about"><button>About</button></a>
-        <a href="#games"><button>Games</button></a>
-        <a href="#books"><button>Books</button></a>
-        <a href="#contact"><button>Contact</button></a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#games">Games</a></li>
+          <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <hero>
-    <div class="hero-content">
-      <h2>From augmented reality to backwoods shenanigans</h2>
-      <h2>Stories. Games. Adventures.</h2>
-        <p>Experience innovation that ignites connection</p>
     </div>
-  </hero>
+  </nav>
 
-    <!-- About Section -->
-  <about id="about">
-    <div class="section-header">
-      <h2>About</h2>
-      <p>Entler Entertainment is the creative vision of Thomas Entler — a storyteller, innovator, and creator of interactive experiences. With two published books, a groundbreaking augmented reality mobile game, and a new social media platform in development, Entler Entertainment explores the space where imagination meets technology. From words on a page to worlds in your pocket, the mission is to create experiences that entertain, inspire, and connect people in meaningful ways.</p>
+  <!-- Hero Section -->
+  <section class="vh-100 d-flex align-items-center justify-content-center text-center bg-transparent" style="margin-top: 80px;">
+    <div class="container">
+      <h2 class="display-5">From augmented reality to backwoods shenanigans</h2>
+      <h2 class="display-5">Stories. Games. Adventures.</h2>
+      <p class="lead">Experience innovation that ignites connection</p>
     </div>
-  </about>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="mb-3">About</h2>
+        <p>Entler Entertainment is the creative vision of Thomas Entler — a storyteller, innovator, and creator of interactive experiences. With two published books, a groundbreaking augmented reality mobile game, and a new social media platform in development, Entler Entertainment explores the space where imagination meets technology. From words on a page to worlds in your pocket, the mission is to create experiences that entertain, inspire, and connect people in meaningful ways.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Games Section -->
-  <games id="games">
-    <div class="section-header">
-      <h2>Our Games</h2>
+  <section id="games" class="container py-5">
+    <h2 class="mb-4 text-center">Our Games</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4">
+        <div class="card h-100 text-center bg-dark text-white">
+          <img src="MinesweepAR Bomb.png" class="card-img-top mx-auto" alt="minesweep bomb" style="max-width:120px;">
+          <div class="card-body">
+            <h3 class="card-title">MinesweepAR</h3>
+            <p class="card-text">A fresh take on a classic puzzle, now in AR.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.react.minesweepar" target="_blank" rel="noopener" class="btn btn-primary">Download Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 mb-4">
+        <div class="card h-100 text-center bg-dark text-white">
+          <img src="GPS map.jpeg" class="card-img-top mx-auto" alt="GPS map with footprints" style="object-fit: cover; object-position: center; width: 120px; height: 123px;">
+          <div class="card-body">
+            <h3 class="card-title">myGPSfootprint</h3>
+            <p class="card-text">Track your journey and leave a footprint on the digital world.</p>
+            <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="game-card">
-      <h3>MinesweepAR</h3>
-      <img src="MinesweepAR Bomb.png" alt="minesweep bomb">
-      <p>A fresh take on a classic puzzle, now in AR.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.react.minesweepar" target="_blank" rel="noopener">Download Now</a>
-    </div>
-
-    <div class="game-card">
-      <h3>myGPSfootprint</h3>
-      <img src="GPS map.jpeg" alt="GPS map with footprints" style="object-fit: cover; object-position: center; width: 119.984px; height: 122.609px; overflow: hidden; display: block;">
-      <p>Track your journey and leave a footprint on the digital world.</p>
-      <a href="#">Coming Soon</a>
-    </div>
-  </games>
+  </section>
 
   <!-- Books Section -->
-  <books>
-    <div class="section-header">
-      <h2>Our Books</h2>
-    </div>
-    <div id="books">
-     <div class="book-card">
-        <h3>Time Prophets</h3>
-        <img src="Time Prophets Cover.png" alt="Time Prophets book cover featuring a futuristic cityscape with flying cars and neon lights, vibrant and dynamic design, text reads Time Prophets by Thomas Entler, overall tone is adventurous and thrilling">
-        <p>An epic fantasy adventure filled with magic and mystery.</p>
-        <a href="https://a.co/d/0ETCQq3" target="_blank" rel="noopener">Buy on Amazon</a>
+  <section id="books" class="container py-5">
+    <h2 class="mb-4 text-center">Our Books</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4">
+        <div class="card h-100 text-center bg-dark text-white">
+          <img src="Time Prophets Cover.png" class="card-img-top mx-auto" alt="Time Prophets book cover" style="max-width:120px;">
+          <div class="card-body">
+            <h3 class="card-title">Time Prophets</h3>
+            <p class="card-text">An epic fantasy adventure filled with magic and mystery.</p>
+            <a href="https://a.co/d/0ETCQq3" target="_blank" rel="noopener" class="btn btn-primary">Buy on Amazon</a>
+          </div>
+        </div>
       </div>
-      <div class="book-card">
-        <h3>Backwoods Shenanigans</h3>
-        <img src="Backwoods Shenanigans.png" alt="Backwoods Shenanigans book cover featuring a rustic cabin in the woods with a campfire and trees, warm and inviting design, text reads Backwoods Shenanigans by Thomas Entler, overall tone is adventurous and cozy">
-        <p>A collection of humorous and heartwarming tales from the great outdoors.</p>
-        <a href="https://www.amazon.com/Backwoods-Shenanigans-Thomas-Entler/dp/B08L8Z8Y5D" target="_blank" rel="noopener">Buy on Amazon</a>
+      <div class="col-md-5 mb-4">
+        <div class="card h-100 text-center bg-dark text-white">
+          <img src="Backwoods Shenanigans.png" class="card-img-top mx-auto" alt="Backwoods Shenanigans book cover" style="max-width:120px;">
+          <div class="card-body">
+            <h3 class="card-title">Backwoods Shenanigans</h3>
+            <p class="card-text">A collection of humorous and heartwarming tales from the great outdoors.</p>
+            <a href="https://www.amazon.com/Backwoods-Shenanigans-Thomas-Entler/dp/B08L8Z8Y5D" target="_blank" rel="noopener" class="btn btn-primary">Buy on Amazon</a>
+          </div>
+        </div>
       </div>
     </div>
-  </books>
+  </section>
 
   <!-- Contact Us Section -->
-  <contact id="contact">
-    <div class="section-header">
-      <h2>Contact Us</h2>
+  <section id="contact" class="container py-5">
+    <h2 class="mb-3 text-center">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form>
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="contactName" name="name" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="contactEmail" name="email"
+  placeholder="you@email.com"
+  required
+  pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+  aria-describedby="emailHelp emailError">
+<div id="emailError" class="invalid-feedback">
+  Please enter a valid email address.
+</div>
+          </div>
+          <div class="mb-3">
+            <label for="contactComment" class="form-label">Comment</label>
+            <textarea class="form-control" id="contactComment" name="comment" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
     </div>
-    <div class="contact-info">
-      <p>
-        Have questions or want to collaborate? Reach out to us <a href="mailto:info@entler-entertainment.com">info@entler-entertainment.com</a>.
-      </p>
-    </div>
-  </contact>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-     <p>&copy; 2025 Entler Entertainment. All rights reserved.</p>
-    </div> 
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p>&copy; 2025 Entler Entertainment. All rights reserved.</p>
+    </div>
   </footer>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.getElementById("hamburger-menu");
-    const navLinks = document.getElementById("nav-links");
-    function checkWidth() {
-      if (window.innerWidth <= 537) {
-        hamburger.style.display = "block";
-        navLinks.style.display = "none";
-      } else {
-        hamburger.style.display = "none";
-        navLinks.style.display = "flex";
-      }
-    }
-    hamburger.addEventListener("click", function() {
-      navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
-    });
-    window.addEventListener("resize", checkWidth);
-    checkWidth();
-  });
-</script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
