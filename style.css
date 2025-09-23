@@ -1,0 +1,529 @@
+/* Reset defaults */
+
+
+.roboto-condensed {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
+header {
+  background: linear-gradient(135deg, rgb(51, 1, 51), #000000);
+  transition: background 0.4s ease, padding 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
+  margin: 0;
+  padding: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  column-gap: 2rem;
+  z-index: 100; /* ensure header stays above all sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+header.scrolled {
+  padding: 1.2rem 2.5rem;
+  height: 90px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+  transition: background 0.4s cubic-bezier(.4,0,.2,1), padding 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+header h1,
+header.scrolled h1 {
+  transition: font-size 0.2s cubic-bezier(.4,0,.2,1), color 0.4s cubic-bezier(.4,0,.2,1), text-shadow 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+header.scrolled nav button,
+header.scrolled #nav-links button,
+nav button,
+#nav-links button {
+  transition: font-size 0.2s cubic-bezier(.4,0,.2,1), transform 0.3s ease, box-shadow 0.3s ease, color 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+header h1 {
+  font-size: clamp(2.2rem, 8vw, 7rem);
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+  text-shadow: 0 0 25px rgba(0, 200, 255, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
+}
+
+header.scrolled h1 {
+  font-size: 2.2rem;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+nav a,
+#nav-links a {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+#nav-links.scrolled {
+  font-size: 1.2rem;
+  transition: font-size 0.3s ease;
+  gap: 10px;  
+} 
+nav button,
+#nav-links button {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 15px;
+  padding: 5% 8%;
+  width: 180px;
+  max-width: 200px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #fff;
+}
+
+nav button:hover,
+#nav-links button:hover {
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.6);
+  color: white;
+  text-shadow: 0 0 25px rgba(255, 0, 242, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
+  transform: translateY(-10px) ease-in-out;
+  font-size: 1.75rem;
+}
+
+#hamburger-menu {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+  z-index: 100;
+  position: relative;
+  display: none;
+  box-shadow: none;
+  transition: font-size 0.2s ease;
+}
+
+#hamburger-menu:active,
+#hamburger-menu:focus,
+#hamburger-menu:hover {
+  font-size: 2.5rem;
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background: transparent;
+  margin-top: 180px; /* space for fixed header */
+}
+
+games,
+books,
+about,
+contact,
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10; /* always below header */
+}
+
+.game-card,
+.book-card,
+.about-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 15px;
+  padding: 30px;
+  width: 280px;
+  gap: 10%;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ensure content fills vertical space */
+  margin-bottom: 20px;
+  min-height: 420px; /* set a minimum height for consistency */
+  height: auto;      /* allow flex to stretch cards equally */
+}
+#books {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+  z-index: 10; /* always below header */
+}
+
+.game-card h3,
+.book-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.game-card p,
+.book-card p,
+.about-card p,
+about p {
+  font-size: 1.2rem;
+  color: #f5f5f5;
+  margin: auto;
+  padding: 5%;
+  max-width: 500px;
+  height: inherit;
+  border-radius: 15px;
+  display: block;
+  text-align: center;
+}
+
+.game-card a,
+.book-card a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background: linear-gradient(90deg, #00c8ff, #9600ff);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.game-card a:hover,
+.book-card a:hover {
+  background: linear-gradient(90deg, #9600ff, #00c8ff);
+}
+
+.game-card:hover,
+.book-card:hover,
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
+}
+
+.game-card img,
+.book-card img {
+  display: block;
+  margin: 0 auto 15px auto;
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(150,0,255,0.2);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #fff;
+  width: 100%;
+}
+
+contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+contact p {
+  font-size: 1.2rem;
+  color: #f5f5f5;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+footer {
+  background: transparent;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 883px) {
+  header {
+    padding: 2rem;
+  }
+  header.scrolled {
+    padding: 0.7rem 1.2rem;
+    height: 120px;
+  }
+  header.scrolled h1 {
+    font-size: 1.5rem;
+  }
+  header.scrolled nav,
+  header.scrolled #nav-links {
+    gap: 8px;
+  }
+  header.scrolled nav button,
+  header.scrolled #nav-links button {
+    font-size: 1rem;
+    padding: 8px 12px;
+    width: 90px;
+    max-width: 110px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #nav-links {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+  }
+  nav button,
+  #nav-links button {
+    width: 70vw;
+    min-width: 120px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  .game-card,
+  .book-card,
+  .about-card {
+    width: 95vw;
+    max-width: 500px;
+    margin: 0 auto 18px auto;
+    padding: 18px;
+    gap: 18px;
+  }
+  games,
+  books,
+  about {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 30px 5vw;
+  }
+  .section-header {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+  hero h2,
+  hero p {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  hero {
+    margin-top: 120px; /* adjust for smaller header */
+  }
+}
+
+@media (max-width: 676px) {
+  header {
+    padding: 2rem;
+  }
+  header.scrolled {
+    padding: 0.5rem 0.8rem;
+    height: 100px;
+  }
+  header.scrolled h1 {
+    font-size: 1.2rem;
+  }
+  header.scrolled nav,
+  header.scrolled #nav-links {
+    gap: 6px;
+  }
+  header.scrolled nav button,
+  header.scrolled #nav-links button {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    width: 70px;
+    max-width: 90px;
+  }
+  nav button,
+  #nav-links button {
+    width: 85vw;
+    min-width: 90px;
+    font-size: 1.05rem;
+    padding: 16px;
+    margin-bottom: 6px;
+    margin-right: 0;
+  }
+  .game-card,
+  .book-card,
+  .about-card {
+    width: 17rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 370px;
+    padding: 18px;
+    gap: 16px;
+  }
+  games,
+  books,
+  about {
+    gap: 16px;
+    padding: 28px 2vw;
+  }
+  .section-header {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  hero h2,
+  hero p {
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+  hero {
+    margin-top: 100px; /* further adjust for smaller header */
+  }
+  .about-card p,
+  .book-card p,
+  .game-card p {
+    font-size: 1.15rem;
+    padding: 8px;
+    max-width: 98vw;
+  }
+}
+
+@media (max-width: 537px) {
+  header {
+    padding: 1.2rem;
+  }
+  header.scrolled {
+    padding: 0.3rem 0.5rem;
+    height: 70px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header.scrolled h1 {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+  header.scrolled nav,
+  header.scrolled #nav-links {
+    gap: 4px;
+  }
+  header.scrolled nav button,
+  header.scrolled #nav-links button {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    width: 60px;
+    max-width: 80px;
+  }
+  #hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin: 0;
+    z-index: 100;
+    position: relative;
+    display: block !important;
+    box-shadow: none;
+    transition: font-size 0.2s ease;
+  }
+
+  #hamburger-menu.scrolled {
+    margin-right: 1rem;
+    margin-left: auto;
+    }
+  #hamburger-menu:active,
+  #hamburger-menu:focus,
+  #hamburger-menu:hover {
+    font-size: 2.5rem;
+  }
+  #nav-links {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 90vw;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border-radius: 0 0 15px 15px;
+    padding: 20px 0;
+    z-index: 99;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  #nav-links button {
+    width: 90vw;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  nav > button:not(#hamburger-menu) {
+    display: none !important;
+  }
+  hero {
+    margin-top: 70px; /* smallest header height */
+  }
+}
