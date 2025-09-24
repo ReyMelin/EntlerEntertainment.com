@@ -1,10 +1,14 @@
+body {
+  background-color: var(--ee-bg-black);
+  color: var(--ee-white);
+}
 /* Color palette */
 :root {
   --ee-blue: #00c8ff;
   --ee-purple: #9600ff;
   --ee-dark-blue: #0c0849;
   --ee-dark-purple: #400c74;
-  --ee-deep-purple: hsl(272, 79%, 13%);
+  --ee-deep-purple: #23073b;
   --ee-bg-black: #000;
   --ee-white: #fff;
 }
@@ -21,46 +25,8 @@
 }
 
 /* Custom background and text color */
-body {
-  color: var(--ee-white);
-  background-color: var(--ee-bg-black);
-  /* Lava lamp background will be rendered by JS */
-}
-
-/* Optional: Custom card background overlay for extra effect */
-.card.bg-dark {
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid var(--ee-blue);
-  box-shadow: 0 0 15px var(--ee-blue);
-}
-
-/* Optional: Custom hero section spacing */
-section.vh-100 {
-  margin-top: 100px;
-}
-
-/* Optional: Custom link color in footer */
-footer a {
-  color: var(--ee-blue);
-}
-
-/* Bootstrap button customization */
-.btn-primary {
-  background-color: var(--ee-blue);
-  border-color: var(--ee-purple);
-}
-.btn-primary:hover {
-  background-color: var(--ee-purple);
-  border-color: var(--ee-blue);
-}
-
-/* Font definitions */
-.roboto-condensed {
-  font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+/* Bootstrap utility classes replace custom navbar styles for responsiveness */
+/* Use .navbar, .navbar-expand-lg, .navbar-dark, .bg-dark, .navbar-brand, .navbar-nav, .nav-link, .btn, .btn-primary, .container-fluid, .shadow, .rounded, .mx-1, .ms-auto, .text-end, .bg-gradient, .py-3, .px-3 for layout and style */
 
 /* Custom navbar styles */
 .navbar-custom {
@@ -73,17 +39,31 @@ footer a {
   box-shadow: 0 2px 24px var(--ee-blue)
 }
 .navbar-custom .navbar-brand {
-  font-size: 2.4rem;
+  font-size: 4rem;
   color: var(--ee-white);
+  transition: font-size 0.2s;
 }
 .navbar-custom .navbar-nav .nav-link {
   color: var(--ee-white);
   transition: color 0.2s;
+  column-gap: 10px;
+}
+.navbar-custom .navbar-nav .nav-link.btn {
+  background-color: var(--ee-dark-blue);
+  border: 1px solid var(--ee-purple);
+  transition: background-color 0.2s, border-color 0.2s;
+  box-shadow: 0 0 8px var(--ee-blue);
+  max-width: 150px;
+
 }
 .navbar-custom .navbar-nav .nav-link:hover,
 .navbar-custom .navbar-nav .nav-link:focus {
   color: var(--ee-blue);
-  text-shadow: 0 0 8px var(--ee-purple);
+  background-color: var(--ee-dark-purple);
+  border-color: var(--ee-blue);
+  box-shadow: 0 0 10px var(--ee-blue);
+  font-size: large;
+  font-weight: bold;
 }
 /* Shrink effect on scroll */
 .navbar-custom.scrolled {
@@ -100,4 +80,27 @@ footer a {
   height: 32px;
 }
 
-/* ...existing code for other effects... */
+/* Responsive header font sizes */
+.responsive-header {
+  font-size: 2rem;
+}
+@media (max-width: 1200px) {
+  .responsive-header {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 992px) {
+  .responsive-header {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .responsive-header {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 576px) {
+  .responsive-header {
+    font-size: 1rem;
+  }
+}
