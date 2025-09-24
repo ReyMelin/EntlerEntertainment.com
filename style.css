@@ -58,7 +58,6 @@ body {
 }
 .navbar-custom .navbar-nav .nav-link:hover,
 .navbar-custom .navbar-nav .nav-link:focus {
-  color: var(--ee-blue);
   background-color: var(--ee-dark-purple);
   border-color: var(--ee-blue);
   box-shadow: 0 0 10px var(--ee-blue);
@@ -67,8 +66,8 @@ body {
 }
 /* Shrink effect on scroll */
 .navbar-custom.scrolled {
-  min-height: 48px;
-  height: 48px;
+  min-height: 75px;
+  height: 75px;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
 }
@@ -82,58 +81,92 @@ body {
 
 /* Responsive header font sizes */
 .responsive-header {
-  font-size: 2rem;
+  font-size: 2rem; /* overridden by media queries below */
 }
 @media (max-width: 1200px) {
   .responsive-header {
-    font-size: 1.75rem;
+    font-size: 1.75rem; /* overrides .responsive-header font-size above */
   }
 }
 @media (max-width: 992px) {
   .responsive-header {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* overrides previous font-size */
   }
 }
 @media (max-width: 768px) {
   .responsive-header {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* overrides previous font-size */
   }
 }
 @media (max-width: 576px) {
   .responsive-header {
-    font-size: 1rem;
+    font-size: 1rem; /* overrides previous font-size, but see next block for !important */
   }
 }
 
 /* Custom styles for small screens */
 @media (max-width: 576px) {
   .responsive-header {
-    font-size: 1.3rem !important;
+    font-size: 1.3rem !important; /* overrides previous font-size for .responsive-header */
     padding-left: 0 !important;
     padding-right: 0 !important;
-    text-align: center !important;
+    text-align: left !important; /* align text left for small screens */
   }
   .navbar-brand img {
-    width: 55px !important;
-    height: 55px !important;
+    width: 55px !important; /* overrides default width */
+    height: 55px !important; /* overrides default height */
   }
   .navbar-nav .nav-link {
-    font-size: 1rem !important;
-    padding: 0.4rem 0.7rem !important;
+    font-size: 1rem !important; /* overrides .navbar-nav .nav-link font-size above */
+    padding: 0.4rem 0.7rem !important; /* overrides default padding */
     justify-content: right
   }
   section.vh-100 {
-    min-height: 60vh !important;
-    margin-top: 60px !important;
+    min-height: 60vh !important; /* overrides default min-height */
+    margin-top: 60px !important; /* overrides default margin-top */
   }
   .card-img-top {
-    max-width: 80px !important;
-    height: auto !important;
+    max-width: 80px !important; /* overrides default max-width */
+    height: auto !important; /* overrides default height */
   }
   .container,
   .container-fluid {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 8px !important; /* overrides default padding */
+    padding-right: 8px !important; /* overrides default padding */
   }
   /* Add more overrides as needed for your custom classes */
+}
+
+/* Logo image size and transition */
+.navbar-brand img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  transition: width 0.3s cubic-bezier(.4,0,.2,1), height 0.3s cubic-bezier(.4,0,.2,1); /* smooth transition */
+}
+
+/* Shrink logo for navbar expand breakpoints */
+@media (max-width: 1200px) { /* xl */
+  .navbar-brand img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 992px) { /* lg */
+  .navbar-brand img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 768px) { /* md */
+  .navbar-brand img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 576px) { /* sm */
+  .navbar-brand img {
+    width: 40px !important;
+    height: 40px !important;
+  }
 }
