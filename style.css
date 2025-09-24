@@ -104,3 +104,36 @@ body {
     font-size: 1rem;
   }
 }
+
+/* Custom styles for small screens */
+@media (max-width: 576px) {
+  .responsive-header {
+    font-size: 1.3rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+  .navbar-brand img {
+    width: 55px !important;
+    height: 55px !important;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem !important;
+    padding: 0.4rem 0.7rem !important;
+    justify-content: right
+  }
+  section.vh-100 {
+    min-height: 60vh !important;
+    margin-top: 60px !important;
+  }
+  .card-img-top {
+    max-width: 80px !important;
+    height: auto !important;
+  }
+  .container,
+  .container-fluid {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  /* Add more overrides as needed for your custom classes */
+}
