@@ -97,6 +97,9 @@ body {
   .responsive-header {
     font-size: 1.25rem; /* overrides previous font-size */
   }
+  #about {
+    max-width: 650px; /* constrain width on medium screens */
+    margin: 0 auto; /* center the section */
 }
 @media (max-width: 576px) {
   .responsive-header {
