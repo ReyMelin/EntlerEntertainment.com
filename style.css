@@ -99,6 +99,23 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* Songs dropdown styling */
+.dropdown-menu-dark {
+  background-color: var(--ee-dark-blue);
+  border: 1px solid var(--ee-purple);
+  box-shadow: 0 0 8px var(--ee-blue);
+}
+.dropdown-menu-dark .dropdown-item {
+  color: var(--ee-white);
+  transition: background-color 0.2s;
+}
+.dropdown-menu-dark .dropdown-item:hover,
+.dropdown-menu-dark .dropdown-item:focus {
+  background-color: var(--ee-dark-purple);
+  color: var(--ee-white);
+}
+
 .navbar-custom.scrolled .navbar-brand {
   font-size: 1.2rem;
 }
