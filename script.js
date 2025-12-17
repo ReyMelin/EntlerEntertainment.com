@@ -116,3 +116,33 @@ window.addEventListener("DOMContentLoaded", function() {
     }, false);
   }
 });
+
+// Handle song links
+document.addEventListener('DOMContentLoaded', function() {
+  const songLinks = document.querySelectorAll('.song-link');
+  const audioPlayer = document.getElementById('audioPlayer');
+  const audioSource = document.getElementById('audioSource');
+  const audioPlayerContainer = document.getElementById('audioPlayerContainer');
+  const nowPlaying = document.getElementById('nowPlaying');
+
+  songLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const songPath = this.getAttribute('data-song');
+      const songTitle = this.textContent;
+      
+      audioSource.src = songPath;
+      audioPlayer.load();
+      
+      // Wait for the audio to be ready before playing
+      audioPlayer.onloadeddata = function() {
+        audioPlayer.play().catch(error => {
+          console.error('Error playing audio:', error);
+        });
+      };
+      
+      nowPlaying.textContent = `Now Playing: ${songTitle}`;
+      audioPlayerContainer.style.display = 'block';
+    });
+  });
+});

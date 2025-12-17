@@ -133,12 +133,25 @@
                 Songs of City Kids
               </button>
               <ul class="dropdown-menu dropdown-menu-dark w-100" aria-labelledby="songsDropdown">
-                <li><a class="dropdown-item" href="#">Song 1 - Coming Soon</a></li>
-                <li><a class="dropdown-item" href="#">Song 2 - Coming Soon</a></li>
-                <li><a class="dropdown-item" href="#">Song 3 - Coming Soon</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/The Zipper.mp3">1. "The Zipper" - from #6</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/Noodling.mp3">2. "Noodling" - from #16</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/Camping Tip.mp3">3. "Camping Tip of the Day" - from #20</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/Toothache Tree.mp3">4. "Toothache Tree" - from #32</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/Boar Hunting Boat.mp3">5. "Boar Huntin' Boat" - from #43</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/Psycho.mp3">6. "Hunting with Psycho" - from #53</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/Deer Heart.mp3">7. "How to Eat a Deer Heart" - from #65</a></li>
+                <li><a class="dropdown-item song-link" href="#" data-song="assets/songs/My Pants.mp3">8. "My Pants" - from #83</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">More Songs Coming</a></li>
               </ul>
+            </div>
+            <!-- Audio Player -->
+            <div id="audioPlayerContainer" class="mt-3" style="display: none;">
+              <audio id="audioPlayer" controls class="w-100">
+                <source id="audioSource" src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p id="nowPlaying" class="text-center mt-2 mb-0 small"></p>
             </div>
           </div>
         </div>
