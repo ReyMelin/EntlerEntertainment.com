@@ -1,7 +1,14 @@
 body {
   background-color: var(--ee-bg-black);
   color: var(--ee-white);
+  padding-top: 144px;
 }
+
+/* Hero section */
+.hero-section {
+  min-height: calc(100vh - 144px);
+}
+
 /* Color palette */
 :root {
   --ee-blue: #00c8ff;
@@ -37,12 +44,6 @@ body {
   transition: all 0.3s cubic-bezier(.4,0,.2,1);
   background: linear-gradient(175deg, var(--ee-dark-purple), var(--ee-blue));
   box-shadow: 0 2px 24px var(--ee-blue)
-}
-
-.navbar-custom .navbar-brand #navbarNav {
-  font-size: 4rem;
-  color: var(--ee-white);
-  transition: font-size 0.2s;
 }
 
 .navbar-custom .navbar-nav .nav-link {
@@ -140,12 +141,14 @@ body {
 }
 @media (max-width: 768px) {
   .responsive-header {
-    font-size: 1.25rem; /* overrides previous font-size */
+    font-size: 1.25rem;
   }
   #about {
-    max-width: 650px; /* constrain width on medium screens */
-    margin: 0 auto; /* center the section */
+    max-width: 650px;
+    margin: 0 auto;
+  }
 }
+
 @media (max-width: 576px) {
   .responsive-header {
     font-size: 1rem; /* overrides previous font-size, but see next block for !important */
@@ -173,10 +176,7 @@ body {
     min-height: 60vh !important; /* overrides default min-height */
     margin-top: 60px !important; /* overrides default margin-top */
   }
-  .card-img-top {
-    max-width: 80px !important; /* overrides default max-width */
-    height: auto !important; /* overrides default height */
-  }
+
   .container,
   .container-fluid {
     padding-left: 8px !important; /* overrides default padding */
@@ -235,4 +235,69 @@ body {
 #nowPlaying {
   color: var(--ee-white);
   font-style: italic;
+}
+
+/* Store badge links for app marketplaces */
+.store-badge-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: clamp(170px, 62vw, 240px);
+  margin: 0 auto;
+  line-height: 0;
+  justify-self: center;
+  flex-shrink: 0;
+}
+
+.store-badge {
+  display: block;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  max-width: 200px;
+  flex-shrink: 0;
+}
+
+.google-play-badge {
+  height: 50px;
+  max-width: 180px;
+}
+
+.app-store-badge {
+  height: 50px;
+  max-width: 160px;
+}
+
+@media (max-width: 576px) {
+  .store-badge-link {
+    width: clamp(160px, 70vw, 210px);
+  }
+
+  .google-play-badge,
+  .app-store-badge {
+    height: 42px;
+  }
+
+  .google-play-badge {
+    max-width: 160px;
+  }
+
+  .app-store-badge {
+    max-width: 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .store-badge-link {
+    width: 240px;
+  }
+
+  .google-play-badge {
+    max-width: 170px;
+  }
+
+  .app-store-badge {
+    max-width: 150px;
+  }
 }
