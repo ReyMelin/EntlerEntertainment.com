@@ -269,6 +269,11 @@ body {
   max-width: 160px;
 }
 
+.amazon-badge {
+  height: 50px;
+  max-width: 180px;
+}
+
 @media (max-width: 576px) {
   .store-badge-link {
     width: clamp(160px, 70vw, 210px);
