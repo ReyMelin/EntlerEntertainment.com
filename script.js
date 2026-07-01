@@ -151,6 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (timeProphetsCard && timeProphetsModal) {
     const openTimeProphetsModal = () => timeProphetsModal.show();
+    const timeProphetsVideo = timeProphetsModalElement.querySelector('video');
+
+    timeProphetsModalElement.addEventListener('hidden.bs.modal', function() {
+      if (timeProphetsVideo) {
+        timeProphetsVideo.pause();
+        timeProphetsVideo.currentTime = 0;
+      }
+    });
 
     timeProphetsCard.addEventListener('click', function(event) {
       if (event.target.closest('a, button')) {
