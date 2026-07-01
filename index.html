@@ -119,11 +119,11 @@
     <h2 class="mb-4 text-center">Our Books</h2>
     <div class="row justify-content-center">
       <div class="col-md-5 mb-4">
-        <div class="card h-100 text-center bg-dark text-white pt-4">
+        <div class="card h-100 text-center bg-dark text-white pt-4 time-prophets-card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="timeProphetsModal">
           <div class="tp-hover-card">
             <img src="assets/images/Time Prophets Cover.png" class="card-img-top mx-auto" alt="Time Prophets book cover" style="max-width:80%; height: auto;">
             <div class="tp-hover-text">
-              <span>Zack accidentally discovers time travel and finds himself in the 1800s. He tries to use this opportunity to get rich. Upon returning, history has changed to what our world is today, and the world’s financially powerful elite knows what he did. He wants to change it back, but they want to stop him and obtain this power for themselves.  Can he avoid them, correct history, and conquer greed?</span>
+              <span>Click for more details, pictures, and a video preview.</span>
             </div>
           </div>
           <div class="card-body d-flex flex-column">
@@ -170,6 +170,37 @@
       </div>
     </div>
   </section>
+
+  <!-- Time Prophets Details Modal -->
+  <div class="modal fade" id="timeProphetsModal" tabindex="-1" aria-labelledby="timeProphetsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content time-prophets-modal bg-dark text-white">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="timeProphetsModalLabel">Time Prophets</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-5">
+              <img src="assets/images/Time Prophets Cover.png" class="img-fluid rounded shadow mb-3" alt="Time Prophets front cover">
+              <img src="assets/images/Time Prophets Back.png" class="img-fluid rounded shadow" alt="Time Prophets back cover">
+            </div>
+            <div class="col-lg-7">
+              <p class="lead mb-3">Zack accidentally discovers time travel and lands in the 1800s. After trying to use the moment to get rich, he returns to a world that has been permanently changed.</p>
+              <p class="mb-3">Now the financially powerful elite know what he did and want to control the same power for themselves. Zack has to decide whether he can undo the damage, protect history, and outsmart greed before time runs out.</p>
+              <div class="ratio ratio-16x9 rounded overflow-hidden shadow mb-3">
+                <video controls poster="assets/images/Time Prophets Cover.png">
+                  <source src="assets/videos/intro.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="mb-0 small text-white-50">Click outside the popup or press Close to return to the books section.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Apps Section -->
   <section id="apps" class="container py-5">

@@ -124,6 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const audioSource = document.getElementById('audioSource');
   const audioPlayerContainer = document.getElementById('audioPlayerContainer');
   const nowPlaying = document.getElementById('nowPlaying');
+  const timeProphetsCard = document.querySelector('.time-prophets-card');
+  const timeProphetsModalElement = document.getElementById('timeProphetsModal');
+  const timeProphetsModal = timeProphetsModalElement ? new bootstrap.Modal(timeProphetsModalElement) : null;
 
   songLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -145,4 +148,22 @@ document.addEventListener('DOMContentLoaded', function() {
       audioPlayerContainer.style.display = 'block';
     });
   });
+
+  if (timeProphetsCard && timeProphetsModal) {
+    const openTimeProphetsModal = () => timeProphetsModal.show();
+
+    timeProphetsCard.addEventListener('click', function(event) {
+      if (event.target.closest('a, button')) {
+        return;
+      }
+      openTimeProphetsModal();
+    });
+
+    timeProphetsCard.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openTimeProphetsModal();
+      }
+    });
+  }
 });
